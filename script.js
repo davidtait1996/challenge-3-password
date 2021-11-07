@@ -71,20 +71,20 @@ var generatePassword = function(){
   for(var i = 0; i < passwordLength; i++){
     //variable to determine what type of character to add to string
     var characterType = characters[getRandomInt(0, characters.length-1)];
-    //if we're adding a letter
-    if(characterType === "lowercase"){
-      //choose a random letter and concatenate it to the string
-      password += (getRandomLetter()).toLowerCase();
-    } else if (characterType === "uppercase" && upperIn.toLowerCase() === "yes"){
+    //if we're adding an uppercase letter
+    if (characterType === "uppercase" && upperIn.toLowerCase() === "yes"){
       //choose a random letter and concatenate it to the string
       password += (getRandomLetter()).toUpperCase();
     } else if (characterType === "number" && numbersIn.toLowerCase() === "yes"){
       //choose a random number and concatenate it to the string
       password += getRandomInt(0, 9);
     } else if (characterType === "symbol" && symbolsIn.toLowerCase() === "yes") {
-      //choose a random symble and concatenate it to the string
+      //choose a random symbol and concatenate it to the string
       password += getRandomSymbol();
-    } 
+    } else {
+      //choose a random lowercase letter and concatenate it to the string
+      password += (getRandomLetter()).toLowerCase();
+    }
   }
   //return completed password
   return password;
