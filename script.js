@@ -10,7 +10,6 @@ function writePassword() {
 
 }
 
-
 var characters = ["lowercase", "uppercase", "number", "symbol"];
 var symbolArray = ["!", "@", "#", "$", "%", "^", "&", "*", "|", ".", ","];
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -38,10 +37,23 @@ var generatePassword = function(){
   var password = "";
 
   var passwordLength = window.prompt("How long should the password be? Input a number between 8 and 128.");
+  if(passwordLength === null || passwordLength === ""){
+    return "Try Generation Again";
+  }
   //check if length is between 8 and 128, and is an integer
   while(passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength) || (passwordLength % 1 != 0)){
     window.alert("Ur stupid, put a valid input.");
     passwordLength = window.prompt("Try again. Input a number between 8 and 128.");
+    if(passwordLength === null || passwordLength === ""){
+      return "Try Generation Again";
+    }
+  }
+
+  var lowerIn = window.prompt("Do you want lowercase letters? Input yes or no");
+  //check if input is yes or no
+  while(lowerIn.toLowerCase() != "yes" && lowerIn.toLowerCase() != "no"){
+    window.alert("ur stupid, put yes or no in the text field");
+    lowerIn = window.prompt("Do you want symbols? Input yes or no this time.");
   }
 
   var symbolsIn = window.prompt("Do you want symbols? Input yes or no");
@@ -65,6 +77,9 @@ var generatePassword = function(){
     numbersIn = window.prompt("Do you want numbers? Input yes or no this time.");
   }
 
+  if(lowerIn.toLowerCase() === "no" && symbolsIn.toLowerCase() === "no" && upperIn.toLowerCase() === "no" && numbersIn.toLowerCase() === "no"){
+    return "You didn't select any criteria for password. Try again.";
+  }
 
 
   // for loop to generate as many characters needed for password
