@@ -39,7 +39,7 @@ var generatePassword = function(){
 
   var passwordLength = window.prompt("How long should the password be? Input a number between 8 and 128.");
   //check if length is between 8 and 128, and is an integer
-  while(passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength) || !Number.isInteger(passwordLength)){
+  while(passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength) || (passwordLength % 1 != 0)){
     window.alert("Ur stupid, put a valid input.");
     passwordLength = window.prompt("Try again. Input a number between 8 and 128.");
   }
