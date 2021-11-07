@@ -25,9 +25,9 @@ Javascript
 
 ---
 
-## Wireframe
+## Screenshot
 
-![Wireframe](https://github.com/davidtait1996/challenge-2-portfolio/blob/main/website.png?raw=true)
+![Screenshot](https://github.com/davidtait1996/challenge-3-password/blob/main/website.PNG?raw=true)
 
 ---
 
